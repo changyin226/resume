@@ -1,0 +1,52 @@
+#title {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+
+  .title-info {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+    @include respond(xl) {
+      font-size: 3rem;
+    }
+
+    @include respond(lg) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(md) {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    @include respond(sm) {
+      font-size: 1.75rem;
+      line-height: 1.5;
+    }
+
+    @include respond(xs) {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+  }
+
+  .title-btn-wrapper{
+    @include respond(md) {
+      text-align: center;
+    }
+
+    a{
+      font-size: 1.5rem;
+
+      @include respond(md) {
+        font-size: 1.25rem;
+      }
+
+      @include respond(xs) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

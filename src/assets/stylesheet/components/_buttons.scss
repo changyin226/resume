@@ -1,0 +1,71 @@
+.custom-btn {
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  line-height: 1;
+  z-index: 1;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+  }
+}
+
+.custom-btn-gradient {
+  @include textGradientColor;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(135deg, $primary-color, $secondary-color);
+  border-image-slice: 1;
+
+  &::after {
+    background-image: linear-gradient(135deg, $primary-color, $secondary-color);
+  }
+
+  &:hover {
+    @include textGradientColor;
+  }
+}
+
+.custom-btn-resume {
+  color: #fff;
+  border: 2px solid #fff;
+
+  &::after {
+    background: #fff;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+@media (any-hover: hover) {
+  .custom-btn-gradient {
+    &:hover {
+      color: #fff;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  .custom-btn-resume {
+    &:hover {
+      color: $primary-color;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

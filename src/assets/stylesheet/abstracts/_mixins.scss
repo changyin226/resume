@@ -1,0 +1,118 @@
+@mixin respond($breakpoint) {
+  @if $breakpoint == xxs {
+    @media (max-width: 334px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xs {
+    @media (max-width: 376px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == sm {
+    @media (max-width: 575px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == md {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == lg {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xl {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+}
+
+@mixin textGradientColor {
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  background-clip: text;
+  color: transparent;
+
+  @include respond(xxs) {
+    background: none;
+    color: $primary-color;
+  }
+}
+
+@mixin slash {
+  background: rgb(28, 28, 28);
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  padding-top: 10%;
+  padding-bottom: 10%;
+  position: relative;
+
+  @include respond(xl) {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  }
+
+  @include respond(lg) {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+  }
+
+  @include respond(md) {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    clip-path: none;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-right: 0px;
+    border-left: 0px;
+    border-image: linear-gradient(90deg, $primary-color, $secondary-color);
+    border-image-slice: 1;
+  }
+
+  &::before{
+    top: calc(-85% + 3px);
+    @include respond(xl) {
+      top: calc(-90% + 3px);
+    }
+    @include respond(lg) {
+      top: calc(-95% + 3px);
+    }
+  }
+
+  &::after{
+    bottom: calc(-85% + 3px);
+    @include respond(xl) {
+      bottom: calc(-90% + 3px);
+    }
+    @include respond(lg) {
+      bottom: calc(-95% + 3px);
+    }
+  }
+
+  &::before,  &::after{
+    content: '';
+    display: block;
+    width: 100%;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);;
+    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+
+    @include respond(xl) {
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+    @include respond(lg) {
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    }
+    @include respond(md) {
+      clip-path: none;
+      height: 0;
+    }
+  }
+}

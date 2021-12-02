@@ -1,0 +1,27 @@
+#skills{
+  .skill-text{
+
+    ul{
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding-left: 18px;
+      margin-bottom: 0;
+      @include respond(sm) {
+        text-align: center;
+        list-style: none;
+        padding-left: 0;
+      }
+    }
+    
+    &-title{
+      font-weight: bold;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgb(170, 170, 170);
+
+      @include respond(sm) {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

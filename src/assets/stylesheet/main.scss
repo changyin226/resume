@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/bootstrap';
+
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+@import './base/base';
+
+@import './components/buttons';
+
+@import './layout/sections';
+
+@import './sections/about';
+@import './sections/contact';
+@import './sections/skills';
+@import './sections/title';
+@import './sections/projects';
+@import './sections/experiences';

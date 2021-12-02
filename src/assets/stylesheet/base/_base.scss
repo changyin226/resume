@@ -1,0 +1,42 @@
+body{
+  color: #fff;
+  background: rgb(17, 17, 17);
+}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.section-title {
+  margin: 0px;
+  margin-bottom: 2.8rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+
+  @include respond(sm) {
+    font-size: 2rem;
+  }
+}
+
+.load-hidden {
+  visibility: hidden;
+}
+
+.text-color-main {
+  @include textGradientColor;
+  &:hover {
+    @include textGradientColor;
+  }
+}
+@media (any-hover: hover) {
+  .text-color-main {
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+  }
+}
